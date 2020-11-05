@@ -4,5 +4,5 @@ Pipfile.lock
 **/__pycache__/
 **/.pytest_cache/
 **/allure-results/
-#**/screenshots/*.png
+**/screenshots/*.png
 #**/video/*.webm
