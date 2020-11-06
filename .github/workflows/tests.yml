@@ -18,21 +18,13 @@ jobs:
       - name: Install pipenv
         uses: dschep/install-pipenv-action@v1
 
-      # - name: Run Tests
-      #   run: |
-      #     pipenv install --dev
-      #     cd test/realworld_example
-      #     pipenv run pytest login_tests.py --alluredir=./allure-results -n 1
-      #     pipenv run allure generate
-
       - name: Run Tests
         run: |
           pipenv install --dev
           pipenv run python -m playwright install
           cd test/realworld_example
-          pipenv run pytest login_tests.py -k test_should_login_to_system
-        env:
-          DEBUG: "pw:*"
+          pipenv run pytest login_tests.py --alluredir=./allure-results -n 1
+          pipenv run allure generate
 
       - uses: actions/upload-artifact@v2
         with:
