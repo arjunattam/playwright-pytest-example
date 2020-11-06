@@ -30,6 +30,8 @@ jobs:
           pipenv install --dev
           cd test/realworld_example
           pipenv run pytest login_tests.py -n 1
+        env:
+          DEBUG: "pw:*"
 
       - uses: actions/upload-artifact@v2
         with:
