@@ -29,7 +29,7 @@ jobs:
         run: |
           pipenv install --dev
           cd test/realworld_example
-          pipenv run pytest login_tests.py -n 1
+          pipenv run pytest login_tests.py -k test_should_login_to_system
         env:
           DEBUG: "pw:*"
 
